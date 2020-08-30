@@ -1,5 +1,7 @@
 # CircleCI Hello World
 
+[![miolab](https://circleci.com/gh/miolab/circleci_helloworld.svg?style=svg)](https://github.com/miolab/circleci_helloworld)
+
 - **CircleCI** での `Hello World` 手順をここに書き置きます
 
 - 以下 _公式_ の内容を元にしつつ、一部アレンジして進めていきます
@@ -91,6 +93,34 @@
 - build が通って、ログに `Hello world` が出力されました！
 
   <img width="1162" alt="スクリーンショット 2020-08-28 20 08 17" src="https://user-images.githubusercontent.com/33124627/91630561-45846380-ea0d-11ea-8ec1-44b19f667e61.png">
+
+---
+
+## 余談
+
+### :rocket: CircleCI の `Status Badge` を README に載せる
+
+- Status Badge
+
+  1. [![miolab](https://circleci.com/gh/miolab/circleci_helloworld.svg?style=svg)](https://github.com/miolab/circleci_helloworld)
+  1. [![miolab](https://circleci.com/gh/miolab/circleci_helloworld.svg?style=shield)](https://github.com/miolab/circleci_helloworld)
+
+  のようなバッヂを載せましょう
+
+#### 手順
+
+以下コードを、`README.md` に埋め込みます（パブリックリポジトリの場合）
+
+```
+[![【organization名】](https://circleci.com/【GitHubならgh。BitBucketならbb】/【organization名】/【リポジトリ名】.svg?style=【バッヂタイプ1.ならsvg、タイプ2.ならshield】)](【リポジトリURL】)`
+
+# 例
+[![miolab](https://circleci.com/gh/miolab/circleci_helloworld.svg?style=svg)](https://github.com/miolab/circleci_helloworld)
+```
+
+- 参考
+
+  [CircleCI / Adding Status Badges](https://circleci.com/docs/2.0/status-badges/)
 
 ---
 
