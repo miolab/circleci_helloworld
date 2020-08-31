@@ -1,9 +1,23 @@
 # init build
 version: 2.1
 jobs:
-  build:
+  build_one:
     docker:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run: echo "Hello world, im!"
+      - run: echo "Hello world one, im!"
+      - run: sleep 25
+  build_two:
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - checkout
+      - run: echo "Hello world two, im!"
+      - run: sleep 15
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - build_one
+      - build_two
