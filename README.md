@@ -102,6 +102,14 @@
 
 `workflow` を導入して、jobs を並列実行可能にします
 
+- リファレンス（公式）
+
+  - [ワークフローを使用したジョブのスケジュール](https://circleci.com/docs/ja/2.0/workflows/)
+
+  - [CircleCI を設定する（workflows）](https://circleci.com/docs/ja/2.0/configuration-reference/#workflows)
+
+  - [コンセプト](https://circleci.com/docs/ja/2.0/concepts/)
+
 ### :rocket: `.circleci/config.yml` アップデート
 
 - ローカルで新しいブランチを切ります
