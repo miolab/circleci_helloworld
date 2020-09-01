@@ -4,11 +4,13 @@
 
 - **CircleCI** での `Hello World` 手順をここに書き置きます
 
-- 以下 _公式_ の内容を元にしつつ、一部アレンジして進めていきます
+- 以下 _CircleCI公式_ の内容を元にしつつ、一部アレンジして進めていきます
 
   - [Hello World](https://circleci.com/docs/ja/2.0/hello-world/)
 
     - [Docker (CirclCI / Node)](https://hub.docker.com/r/circleci/node)
+
+  - [入門ガイド](https://circleci.com/docs/ja/2.0/getting-started/#section=getting-started)
 
 ### 前提
 
@@ -30,7 +32,7 @@
 
 ---
 
-## 手順
+## Hello world 手順
 
 ### :rocket: `.circleci/config.yml` 作成
 
@@ -96,6 +98,74 @@
 
 ---
 
+## ワークフロー導入
+
+`workflow` を導入して、jobs を並列実行可能にします
+
+### :rocket: `.circleci/config.yml` アップデート
+
+- ローカルで新しいブランチを切ります
+
+  `$ git checkout -b "add_workflows"`
+
+- `.circleci/config.yml` を、以下の内容へとアップデートします
+
+  ```yml
+  version: 2.1
+  jobs:
+    build_one:
+      docker:
+        - image: circleci/node:4.8.2
+      steps:
+        - checkout
+        - run: echo "Hello world one, im!"
+        - run: sleep 25
+    build_two:
+      docker:
+        - image: circleci/node:4.8.2
+      steps:
+        - checkout
+        - run: echo "Hello world two, im!"
+        - run: sleep 15
+  workflows:
+    version: 2
+    one_and_two:
+      jobs:
+        - build_one
+        - build_two
+  ```
+
+  - __jobs名__（build_one, build_two の部分）は __任意の名前__ でOK
+
+    - `workflow` を導入しない場合（= `jobs` が1つだけの場合）は、__jobs名__ を `build` と命名する必要があります
+
+  - __workflow名__ も __任意の名前__ でOK
+
+- push します
+
+  `git push --set-upstream origin add_workflows`
+
+### :rocket: CircleCI プロジェクト管理画面で結果確認
+
+- Pipeline で job が __並列実行__ で走っています
+
+  ![スクリーンショット 2020-08-31 19 14 01](https://user-images.githubusercontent.com/33124627/91710379-1dd4fd00-ebbf-11ea-9373-2050d8329051.png)
+
+  ![スクリーンショット 2020-08-31 19 14 29](https://user-images.githubusercontent.com/33124627/91710381-1e6d9380-ebbf-11ea-8d1c-4de32b4f6248.png)
+
+  ![スクリーンショット 2020-08-31 19 15 31](https://user-images.githubusercontent.com/33124627/91710382-1f062a00-ebbf-11ea-8eb3-f4275cf4896f.png)
+
+  すべてのjobが通りました
+
+- 念のため、`build_one` のログを確認してみます
+
+  ![スクリーンショット 2020-08-31 19 16 41](https://user-images.githubusercontent.com/33124627/91710384-1f9ec080-ebbf-11ea-9fec-e4c686c5ff27.png)
+
+  Hello world が出力されています！
+
+---
+---
+
 ## 余談
 
 ### :rocket: CircleCI の `Status Badge` を README に載せる
@@ -127,8 +197,6 @@
 ## その他参考
 
 - [公式 Docs](https://circleci.com/docs/ja/)
-
-  - [入門ガイド](https://circleci.com/docs/ja/2.0/getting-started/#section=getting-started)
 
 - [公式 ブログ](https://circleci.com/ja/blog/tag/tutorials/)
 
