@@ -206,6 +206,16 @@
 
 - [公式 Docs](https://circleci.com/docs/ja/)
 
+  - Orbs
+
+    1. [Orbs、ジョブ、ステップ、ワークフロー](https://circleci.com/docs/ja/2.0/jobs-steps/#section=getting-started)
+
+    1. [Orb の概要](https://circleci.com/docs/ja/2.0/orb-intro/)
+
+    1. [Orb のコンセプト](https://circleci.com/docs/ja/2.0/using-orbs/)
+
+    1. [Orbs リファレンス ガイド](https://circleci.com/docs/ja/2.0/reusing-config/)
+
 - [公式 ブログ](https://circleci.com/ja/blog/tag/tutorials/)
 
   - [Heroku への継続的デプロイ](https://circleci.com/ja/blog/continuous-deployment-to-heroku/)
@@ -215,3 +225,5 @@
 - [CircleCI Connpass 資料](https://circleci.connpass.com/presentation/)
 
 - [いまさらだけど CircleCI に入門したので分かりやすくまとめてみた（Qiita）](https://qiita.com/gold-kou/items/4c7e62434af455e977c2)
+
+- __[CircleCI status](https://status.circleci.com/)__
