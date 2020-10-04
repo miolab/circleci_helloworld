@@ -224,13 +224,21 @@
 
   - __Docker__
 
-    - [カスタム ビルドの Docker イメージの使用](https://circleci.com/docs/ja/2.0/custom-images/)
+    - machine executor
 
-    - [CircleCI のビルド済み Docker イメージ](https://circleci.com/docs/ja/2.0/circleci-images/)
+      - [Executor タイプを選択する / Machine の使用](https://circleci.com/docs/ja/2.0/executor-types/#machine-%E3%81%AE%E4%BD%BF%E7%94%A8)
 
-    - [docker-compose のインストールと使用](https://circleci.com/docs/ja/2.0/docker-compose/)
+      - [Running Docker Commands / Mounting Folders](https://circleci.com/docs/2.0/building-docker-images/#mounting-folders)
 
-    - [Docker コマンドの実行手順](https://circleci.com/docs/ja/2.0/building-docker-images/)
+    - other
+
+      - [カスタム ビルドの Docker イメージの使用](https://circleci.com/docs/ja/2.0/custom-images/)
+
+      - [CircleCI のビルド済み Docker イメージ](https://circleci.com/docs/ja/2.0/circleci-images/)
+
+      - [docker-compose のインストールと使用](https://circleci.com/docs/ja/2.0/docker-compose/)
+
+      - [Docker コマンドの実行手順](https://circleci.com/docs/ja/2.0/building-docker-images/)
 
   - [チュートリアル](https://circleci.com/docs/ja/2.0/tutorials/)
 
